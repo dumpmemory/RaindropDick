@@ -221,7 +221,7 @@ fn add_name(s: &mut Cursive) {
         .title("Enter a new name")
         .button("Ok", |s| {
             let name = s
-                .call_on_name("name", |view: &mut EditView| view.get_content())
+                .call_on_name("input the urls", |view: &mut EditView| view.get_content())
                 .unwrap();
             ok(s, &name);
         })
@@ -298,13 +298,13 @@ pub fn v2core() -> Dialog {
         EditView::new()
             .content(content)
             .on_submit(ok)
-            .with_name("name")
+            .with_name("v2ray")
             .fixed_width(30),
     )
     .title("Enter a new name")
     .button("Ok", |s| {
         let name = s
-            .call_on_name("name", |view: &mut EditView| view.get_content())
+            .call_on_name("v2ray", |view: &mut EditView| view.get_content())
             .unwrap();
         ok(s, &name);
         s.pop_layer();
